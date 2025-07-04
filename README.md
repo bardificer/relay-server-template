@@ -32,9 +32,10 @@ flyctl deploy
 
 The default server configuration above involves sharing a private-key with the Relay control plane.
 This allows the Relay control plane to issue tokens to users in order for them to access your Relay Server.
-However, this mean that it is possible for the Relay control plane to issue a key and then connect to your documents.
+It is technically possible for the Relay control plane to issue an access token and then use it to connect to your Relay Server if it is hosted on the public internet.
 
-To ensure that your deployment is fully private, you need to host your Relay Server on a private network (so that it is not be accessible from the public internet). We recommend using tailscale.
+**To ensure that your documents are fully private, you need to host your Relay Server on a private network such as a tailscale tailnet or a corporate VPN.**
+**If you don't already have a private network set up, we recommend using tailscale.**
 
 Whenever you change the URL of your server, you will need to update Y_SWEET_URL_PREFIX to your new url and notify us.
 
