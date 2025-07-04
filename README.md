@@ -34,14 +34,9 @@ The default server configuration above involves sharing a private-key with the R
 This allows the Relay control plane to issue tokens to users in order for them to access your Relay Server.
 However, this mean that it is possible for the Relay control plane to issue a key and then connect to your documents.
 
-To prevent this, we recommend that you configure your Relay Server so that it is not be accessible from the public internet.
+To ensure that your deployment is fully private, you need to host your Relay Server on a private network (so that it is not be accessible from the public internet). We recommend using tailscale.
 
-We recommend using any of these providers:
- - Tailscale tailnet
- - Fly.io wireguard private network (.flycast)
- - Cloudflare Zero Trust
-
-If you change the public facing URL, you will need to update the Y_SWEET_URL_PREFIX to your new url and notify us.
+Whenever you change the URL of your server, you will need to update Y_SWEET_URL_PREFIX to your new url and notify us.
 
 For instructions on configuring tailscale or .flycast private networking see [ADVANCED](ADVANCED.md).
 
@@ -49,6 +44,7 @@ For instructions on configuring tailscale or .flycast private networking see [AD
 ## Advanced
 
 For more advanced topics like S3 persistence and custom domains, see [ADVANCED](ADVANCED.md).
+
 
 # Acknowledgements
 
