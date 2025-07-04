@@ -32,29 +32,6 @@ flyctl secrets set \
     Y_SWEET_STORE="s3://$BUCKET/"
 ```
 
-### Generating your own Private Key
-
-You will need to send us the API key to allow the Relay service to create and authorize documents on your server.
-
-Generating an API key
-```
-docker run --rm -it docker.system3.md/relay-server y-sweet gen-auth --json
-KEYS= docker run --rm -it docker.system3.md/relay-server y-sweet gen-auth --json
-PRIVATE_KEY= echo $KEYS | python3 -c "import sys; import json; print(json.load(sys.stdin)['private_key'])"
-API_KEY= echo $KEYS | python3 -c "import sys; import json; print(json.load(sys.stdin)['server_token'])"
-flyctl secrets set \
-    Y_SWEET_AUTH="$PRIVATE_KEY" \
-```
-
-Next we need to send a connection string to the Relay team.
-You can print your connection string like this:
-```
-echo "https://${API_KEY}@${APP_NAME}.fly.dev"
-```
-
-Contact us via email (daniel@system3.md) or on [Discord](https://discord.system3.md) for instructions on how to send us this key securely.
-
-
 ### Using a custom domain
 
 You can use `flyctl certs` to add a custom domain to your app.
