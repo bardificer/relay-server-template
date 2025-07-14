@@ -101,6 +101,10 @@ Templates:
 
 [Custom VPN with R2](templates/fly-r2-custom.md)
 
+### Self-Hosted
+Templates:
+
+[Cutom VPN with separate MinIO](templates/docker-minio-custom.md)
 
 # Acknowledgements
 
